@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="SQL Server on Oracle" uuid="05ba3a57-d88c-4d06-8bb4-81b63f48127a">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://oracle.siams.loc\medoffice:2433;databaseName=jtest</jdbc-url>
+      <explain-plan-config>
+        <provider>com.intellij.database.plan.oracle.OracleExplainPlanProvider</provider>
+      </explain-plan-config>
+    </data-source>
+    <data-source source="LOCAL" name="SQL Server on ROX" uuid="3b2f66ee-5d67-467a-89d8-74f6891fb32b">
+      <driver-ref>sqlserver.ms</driver-ref>
+      <jdbc-driver>com.microsoft.sqlserver.jdbc.SQLServerDriver</jdbc-driver>
+      <jdbc-url>jdbc:sqlserver://rox.siams.loc:1433;databaseName=medoffice-release_v6(0)</jdbc-url>
+    </data-source>
+  </component>
+</project>
