@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="kript:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>kript</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="kript.war">
+      <element id="artifact" artifact-name="kript:war exploded" />
+    </root>
+  </artifact>
+</component>

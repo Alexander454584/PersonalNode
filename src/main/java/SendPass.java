@@ -16,6 +16,7 @@ public class SendPass extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String pass = request.getParameter("pass");
         String respone = Connection.requsetPost("http://127.0.0.1:7227/", "{\"jsonrpc\": \"1.0\",\"id\": \"apis-core\",\"method\": \"walletpassphrase\",\"params\": [\""+pass+"\", 999999, true]}");
+        System.out.println(respone);
         JsonElement root = new JsonParser().parse(respone);
         if (!root.isJsonNull()) {
             String respone1 = Connection.requsetPost("http://127.0.0.1:7227/", "{\"jsonrpc\": \"1.0\",\"id\": \"apis-core\",\"method\": \"getwalletinfo\",\"params\": []}");
@@ -118,9 +119,9 @@ public class SendPass extends HttpServlet {
             request.setAttribute("l7", str1);
             request.setAttribute("l8", str2);
             request.setAttribute("l10", "<form method = \"post\" action = \"sendpass\"> " +
-                            "<font color=\"#ff0000\">Пароль введен не верно, повторите попытку</font> <br>" +
-                    "<input type=\"password\" name=\"pass\" id=\"pass\"> " +
-                    "<button type=\"submit\">Отправить пароль</button></form>");
+                            "<font style=\"margin-left: 30px\" color=\"#ff0000\">Пароль введен не верно, повторите попытку</font> <br>" +
+                    "<input type=\"password\" name=\"pass\" id=\"pass\" style=\"color: #02021d; margin-left: 30px\">  " +
+                    "<button type=\"submit\" style=\"color: #110e0e\">Отправить пароль</button></form>");
             view.forward(request, response);
         }
     }

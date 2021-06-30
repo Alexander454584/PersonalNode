@@ -16,7 +16,7 @@ public class Connection {
             return content.toString();
         } catch (final Exception ex) {
             ex.printStackTrace();
-            return ex.getMessage()+ex.getLocalizedMessage();
+            return "";
         }
     }
     public static String requsetPost(String link, String text) throws IOException{
