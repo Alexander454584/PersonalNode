@@ -8,8 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 @WebServlet(name = "Upload", value = {"/upload"})
@@ -23,7 +22,6 @@ public class Upload extends HttpServlet {
     }
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         if(ServletFileUpload.isMultipartContent(request)){
             try {
                 List<FileItem> multiparts = new ServletFileUpload(
@@ -32,17 +30,18 @@ public class Upload extends HttpServlet {
                     if(!item.isFormField()){
                         String name = new File(item.getName()).getName();
                         if (name.intern().equals("wallet.dat")) {
-                            item.write(new File(UPLOAD_DIRECTORY_Wallet + File.separator + name));
-                            request.setAttribute("message", "<div class=\"okno\"> Файл "+name+" успешно загружен.</div>");
+                            item.write(new File(UPLOAD_DIRECTORY_Wallet + File.separator + name+"_new"));
+                            request.setAttribute("message", "<div class=\"okno\"> Файл "+name+" успешно загружен. Перезагрузите оборудование.</div>");
                         }
                         else{
                             FileItem item1 = multiparts.get(1);
                             String name1 = new File(item1.getName()).getName();
                             if (name1.intern().equals("zerohourd")||name1.intern().equals("zerohour-cli")||name1.intern().equals("zerohour-tx")||
                                     name1.intern().equals("zerohour-wallet")||name1.intern().equals("test_zerohour")) {
-                                item1.write(new File(UPLOAD_DIRECTORY_zerohourd + File.separator + name1));
-                                request.setAttribute("message", "<div class=\"okno\"> Файл " + name1 + " успешно загружен.</div>");
+                                item1.write(new File(UPLOAD_DIRECTORY_zerohourd + File.separator + name1+"_new"));
+                                request.setAttribute("message1", "<div class=\"okno\"> Файл " + name1+ " успешно загружен. Перезагрузите оборудование.</div>");
                             }else
+                            request.setAttribute("message1", "<div class=\"okno\"> Не правильно выбран файл.</div>");
                             request.setAttribute("message", "<div class=\"okno\"> Не правильно выбран файл.</div>");
                         }
                     }

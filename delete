@@ -1,0 +1,5 @@
+cd /root/.zerohour
+ls | grep -v wallet.dat | grep -v zerohour.conf | xargs rm -rfv
+cd /home/zhc
+rm delete
+reboot

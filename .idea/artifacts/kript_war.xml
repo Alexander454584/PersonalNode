@@ -9,6 +9,7 @@
     </properties>
     <root id="archive" name="kript.war">
       <element id="artifact" artifact-name="kript:war exploded" />
+      <element id="file-copy" path="$PROJECT_DIR$/delete" />
     </root>
   </artifact>
 </component>

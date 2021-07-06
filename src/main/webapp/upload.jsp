@@ -13,78 +13,83 @@
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css" />
 
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/styles.css" />
-
-    <style>
-        .okno {
-            width: 300px;
-            height: 50px;
-            text-align: center;
-            padding: 15px;
-            border: 3px solid #0000cc;
-            border-radius: 10px;
-            color: #0000cc;
-        }
-    </style>
 </head>
 
 <body id="home">
-    <div id="large-header" class="large-header" style="height: 1158px">
-        <canvas id="demo-canvas" width="1833" height="1158"></canvas>
-    </div>
-    <div id="Content" class="wrapper">
-        <div class="top-wrapper">
-            <div class="ZH-header-block">
-                <div class="wrapper">
-                    <h1>ZHC Personal Node</h1>
-                </div>
+<div id="large-header" class="large-header" style="height: 1158px">
+    <canvas id="demo-canvas" width="1833" height="1158"></canvas>
+</div>
+<div id="Content" class="wrapper">
+    <div class="top-wrapper">
+        <div class="ZH-header-block">
+            <div class="wrapper">
+                <h1>ZHC Personal Node</h1>
             </div>
         </div>
-        <div class="bottom-wrapper">
-            <div class="intro">
-                <div class="intro-text">
-                    <h2 class="section-heading">Настройка</h2>
+    </div>
+    <div class="bottom-wrapper">
+        <div class="intro">
+            <div class="intro-text">
+                <h2 class="section-heading">Настройка</h2>
+                <div class="ZH-bnt-block-small">
+                    <a href="complexDownload" download="wallet.dat" onclick="this.href='wallet.dat';">
+                        <button class="button_1623083733844 btn-zh-small">Резервная копия кошелька</button>
+                    </a>
+                </div>
+                <form action="upload" method="post" enctype="multipart/form-data">
 
-                    <form action="upload" method="post" enctype="multipart/form-data">
-
-                            <hr>
-                            <h3>Загрузка кошелька</h3>
-                            <div class="ZH-bnt-block-small">
-                                <input class="button_1623083733844 btn-zh-small" type="file" name="file" />
-                            </div>
+                    <hr>
+                    <h3>Загрузка кошелька</h3>
+                    <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="file" name="file" />
+                    </div>
+                    <div >
                         ${requestScope["message"]}
-                            <br>
-                            <div class="ZH-bnt-block-small">
-                                <input class="button_1623083733844 btn-zh-small" type="submit" value="Загрузить" />
-                            </div>
-
-                            <hr>
-                            <h3>Загрузка обновлений</h3>
-                            <div class="ZH-bnt-block-small">
-                                <input class="button_1623083733844 btn-zh-small" type="file" name="file" />
-                            </div>
-                            <div class="ZH-bnt-block-small">
-                                <input class="button_1623083733844 btn-zh-small" type="submit" value="Обновление ПО" />
-                            </div>
-
-                        <hr>
-                </div>
+                    </div>
+                    <!-- <br> -->
+                    <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Загрузить" />
+                    </div>
+                    <hr>
+                    <h3>Загрузка обновлений</h3>
+                    <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="file" name="file" />
+                    </div>
+                    <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Обновление ПО" />
+                    </div>
+                    <div >
+                        ${requestScope["message1"]}
+                    </div>
                 </form>
+                    <form action="copy" method="post">
+                        <hr>
+                        <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Очистка кэша" />
+                        </div>
+                        <div >
+                        ${requestScope["message2"]}
+                        </div>
+                        <hr>
+                    </form>
 
+                    <div class="ZH-bnt-block-small">
+                        <a href="/index.html" class="button_1623083733844 btn-zh-small">На главную</a>
+                    </div>
             </div>
-            <div class="disklaimer">
-                <a class="disklaimer-link" href="/doc/disklaimer.pdf">Отказ от ответственности</a>
-            </div>
+
         </div>
     </div>
+</div>
 
-    <script src="${pageContext.request.contextPath}/js/TweenLite.min.js"></script>
-    <!-- TweenMax (60 Kb) — это основная библиотека анимации. Есть ещё TweenLite (21 Kb), включающий только базовые возможности. -->
-    <script src="${pageContext.request.contextPath}/js/EasePack.min.js"></script>
-    <!-- это набор эффектов анимации, контролирующих её характер, например, плавное замедление или «эластичное» подрагивание. -->
-    <script src="${pageContext.request.contextPath}/js/rAF.js"></script>
-    <!-- анимация -->
-    <script src="${pageContext.request.contextPath}/js/demo-1.js"></script>
-    <!-- анимация -->
+<script src="${pageContext.request.contextPath}/js/TweenLite.min.js"></script>
+<!-- TweenMax (60 Kb) — это основная библиотека анимации. Есть ещё TweenLite (21 Kb), включающий только базовые возможности. -->
+<script src="${pageContext.request.contextPath}/js/EasePack.min.js"></script>
+<!-- это набор эффектов анимации, контролирующих её характер, например, плавное замедление или «эластичное» подрагивание. -->
+<script src="${pageContext.request.contextPath}/js/rAF.js"></script>
+<!-- анимация -->
+<script src="${pageContext.request.contextPath}/js/demo-1.js"></script>
+<!-- анимация -->
 </body>
 
 </html>
