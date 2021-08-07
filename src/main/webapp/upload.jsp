@@ -7,7 +7,7 @@
 
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>ZHCash P2P Blockchain Network</title>
+    <title>ZHC Personal Node</title>
 
     <link rel="shortcut icon" href="https://zhcash.com/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/normalize.css" />
@@ -16,6 +16,7 @@
 </head>
 
 <body id="home">
+
 <div id="large-header" class="large-header" style="height: 1158px">
     <canvas id="demo-canvas" width="1833" height="1158"></canvas>
 </div>
@@ -51,12 +52,12 @@
                         <input class="button_1623083733844 btn-zh-small" type="submit" value="Загрузить" />
                     </div>
                     <hr>
-                    <h3>Загрузка обновлений</h3>
+                    <h3>Загрузка обновлений программного обеспечения</h3>
                     <div class="ZH-bnt-block-small">
                         <input class="button_1623083733844 btn-zh-small" type="file" name="file" />
                     </div>
                     <div class="ZH-bnt-block-small">
-                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Обновление ПО" />
+                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Загрузить" />
                     </div>
                     <div >
                         ${requestScope["message1"]}
@@ -70,8 +71,18 @@
                         <div >
                         ${requestScope["message2"]}
                         </div>
-                        <hr>
                     </form>
+                <form action="copyreboot" method="post">
+                    <hr>
+                    <div class="ZH-bnt-block-small">
+                        <input class="button_1623083733844 btn-zh-small" type="submit" value="Перезагрузка оборудования" />
+                    </div>
+                    <div >
+                        <meta http-equiv="Refresh" content="300;URL=${pageContext.request.contextPath}/upload" />
+                        ${requestScope["message3"]}
+                    </div>
+                    <hr>
+                </form>
 
                     <div class="ZH-bnt-block-small">
                         <a href="/index.html" class="button_1623083733844 btn-zh-small">На главную</a>

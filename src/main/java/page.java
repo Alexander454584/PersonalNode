@@ -37,10 +37,10 @@ public class page {
                 l6 = "Работает";
             }else{
                 request.setAttribute("color2", "#ff0000");
-                l6 = "Узел заблокирован введите пароль";
+                l6 = "Узел не активен";
                 request.setAttribute("l10", "<form method = \"post\" action = \"sendpass\">" +
                         "<input type=\"password\" name=\"pass\" id=\"pass\" style=\"color: #02021d; margin-left: 30px\">  " +
-                        "<button type=\"submit\" style=\"color: #110e0e\">Отправить пароль</button></form>");
+                        "<button type=\"submit\" style=\"color: #110e0e\">Ввод пароля</button></form>");
             }
             String str1 ="";
             String str2 ="";

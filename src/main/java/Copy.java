@@ -23,7 +23,7 @@ public class Copy extends HttpServlet {
         File dest = new File("/home/zhc/delete");
         try {
             Files.copy(source.toPath(), dest.toPath());
-            request.setAttribute("message2", "<div class=\"okno\"> Для продолжения перезагрузите оборудование.</div>");
+            request.setAttribute("message2", "<div class=\"okno\"> Операция успешно выполнена. Перезагрузите оборудование.</div>");
         }catch (Exception ex){
             request.setAttribute("message2", "<div class=\"okno\">Не предвиденная ошибка:"+ex+"</div>");
         }

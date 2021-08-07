@@ -13,7 +13,7 @@ import java.util.List;
 
 @WebServlet(name = "Upload", value = {"/upload"})
 public class Upload extends HttpServlet {
-    private final String UPLOAD_DIRECTORY_Wallet = "/root/.zerohour/";
+    private final String UPLOAD_DIRECTORY_Wallet = "/home/zhc/";
     private final String UPLOAD_DIRECTORY_zerohourd = "/home/zhc/";
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
